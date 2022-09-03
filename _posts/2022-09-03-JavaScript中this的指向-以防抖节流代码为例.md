@@ -30,7 +30,7 @@ published: true
 
 下列写法，在绑定时已经调用了`debounce`。其实，真正绑定 onclick 事件的是`debounce`被调用后`return`的函数，而`debounce`已经先在全局范围内被调用了。所以，当`onclick`事件触发时，在`debounce`内部，`this`指向`window`：
 
-```
+```jsx
 function debounce(fn, delay) {
 // 在这一层的this是window
   return ...
